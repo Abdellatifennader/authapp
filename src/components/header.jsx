@@ -1,49 +1,33 @@
 import Link from "next/link";
 import { SignInButton, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 
-import {
-  
-    NavigationMenuItem,
-    NavigationMenuLink,
-    NavigationMenu
-   
-  } from "@/components/ui/navigation-menu"
-  import { navigationMenuTriggerStyle } from "@/components/ui/navigation-menu"
-  
-  const Header = () => {
-    return (
-        <div className="flex items-center justify-center pt-10 ">
-        <NavigationMenu >
-        <NavigationMenuItem >
-        <Link href="/" legacyBehavior passHref >
-          <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-            Home
-          </NavigationMenuLink>
+export default function Header() {
+  return (
+    <header className='bg-gray-700'>
+      <div className='max-w-6xl mx-auto flex justify-between items-center p-3'>
+        {/* logo */}
+        <Link href='/' className='text-2xl font-extrabold group cursor-pointer'>
+          <span className='text-white'>
+            Auth
+          </span>
+          <span className='text-white'>
+            App
+          </span>
         </Link>
-        <Link href="/about" legacyBehavior passHref>
-          <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-            About
-          </NavigationMenuLink>
-        </Link>
-       <SignedIn>
-          <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-          <UserButton/>
-          </NavigationMenuLink>
-          </SignedIn>
-
-       
-          <SignedOut>
-     
-            <SignInButton/>
-      
-          </SignedOut>
-          
-        
-      </NavigationMenuItem>
-      </NavigationMenu>
+        {/* add a navigation menu */}
+        <nav>
+          <ul className='flex gap-4'>
+            <Link href='/' className="text-white">Home</Link>
+            <Link href='/about' className="text-white">About</Link>
+            <SignedIn>
+              <UserButton />
+            </SignedIn>
+            <SignedOut>
+              <SignInButton />
+            </SignedOut>
+          </ul>
+        </nav>
       </div>
-    )
-  }
-  
-  export default Header
-  
+    </header>
+  );
+}

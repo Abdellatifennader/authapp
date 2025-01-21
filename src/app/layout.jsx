@@ -1,5 +1,5 @@
 import "./globals.css";
-import Header from "@/components/header";
+import Header from "../components/header";
 import { ClerkLoaded, ClerkLoading, ClerkProvider } from "@clerk/nextjs";
 import { Inter } from "next/font/google";
 
@@ -19,7 +19,7 @@ export default function RootLayout({ children }) {
          
           </ClerkLoading>
           <ClerkLoaded>
-            <Header />
+          <Header/>
             {children}
           </ClerkLoaded>
         </body>
