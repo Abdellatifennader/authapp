@@ -19,11 +19,11 @@ export default function Header() {
           <ul className='flex gap-4'>
             <Link href='/' className="text-white">Home</Link>
             <Link href='/about' className="text-white">About</Link>
-            <SignedIn>
-              <UserButton />
+            <SignedIn >
+              <UserButton  />
             </SignedIn>
             <SignedOut>
-              <SignInButton />
+              <SignInButton className="text-white" />
             </SignedOut>
           </ul>
         </nav>
