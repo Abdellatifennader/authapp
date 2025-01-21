@@ -1,4 +1,9 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
-
-export default nextConfig;
+const nextConfig = {
+    webpack: (config) => {
+      // Custom Webpack rules here
+      return config;
+    },
+  };
+  
+  module.exports = nextConfig;
