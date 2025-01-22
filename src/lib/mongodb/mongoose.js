@@ -16,7 +16,6 @@ export const connect = async () => {
     await mongoose.connect(process.env.MONGODB_URI, {
       dbName: 'next-auth-app',
       
-      useUnifiedTopology: true,
     });
     console.log('MongoDB connected');
     initialized = true;
