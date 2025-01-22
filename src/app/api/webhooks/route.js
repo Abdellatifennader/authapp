@@ -1,6 +1,6 @@
 import { headers } from "next/headers";
 import { Webhook } from "svix";
-import { createOrUpdateUser, deleteUser, deleteUser } from "../../../lib/actions/user";
+import { createOrUpdateUser, deleteUser } from "../../../lib/actions/user";
 
 export async function POST(req) {
   const SIGNING_SECRET = process.env.SIGNING_SECRET
@@ -12,8 +12,7 @@ export async function POST(req) {
   // Create new Svix instance with secret
   const wh = new Webhook(SIGNING_SECRET)
 
-  // Get headers
- // Get the headers
+
  const headerPayload = headers();
  const svix_id = headerPayload.get('svix-id');
  const svix_timestamp = headerPayload.get('svix-timestamp');
