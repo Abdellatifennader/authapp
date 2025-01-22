@@ -2,7 +2,7 @@ export default function Home() {
   return (
     <div className='px-4 py-12 max-w-4xl mx-auto'>
       <h1 className='text-4xl font-extrabold mb-8 text-slate-800 text-center'>
-        Welcome to Our Next Auth Application
+        Welcome to My Auth Application
       </h1>
       <div className='bg-white p-6 rounded-lg flex flex-col items-center'>
         <img
