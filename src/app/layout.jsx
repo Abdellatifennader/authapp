@@ -15,13 +15,11 @@ export default function RootLayout({ children }) {
     <ClerkProvider>
       <html lang='en'>
         <body className={inter.className}>
-          <ClerkLoading>
          
-          </ClerkLoading>
-          <ClerkLoaded>
+          
           <Header/>
             {children}
-          </ClerkLoaded>
+       
         </body>
       </html>
     </ClerkProvider>
